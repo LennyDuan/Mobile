@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15C50" minimumToolsVersion="Automatic">
+    <entity name="Revision" representedClassName=".Revision" syncable="YES">
+        <attribute name="revision" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Tag" representedClassName=".Tag" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="wordPairs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WordPhrasePair" inverseName="tags" inverseEntity="WordPhrasePair" syncable="YES"/>
+    </entity>
+    <entity name="WordPhrasePair" representedClassName=".WordPhrasePair" syncable="YES">
+        <attribute name="english" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="welsh" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="revision" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Revision" syncable="YES"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="wordPairs" inverseEntity="Tag" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Revision" positionX="-351" positionY="147" width="128" height="58"/>
+        <element name="Tag" positionX="-72" positionY="17" width="128" height="73"/>
+        <element name="WordPhrasePair" positionX="-369" positionY="-27" width="128" height="133"/>
+    </elements>
+</model>
