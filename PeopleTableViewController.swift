@@ -25,7 +25,7 @@ class PeopleTableViewController: UITableViewController, NSFetchedResultsControll
     
     func listFetchRequest() ->NSFetchRequest {
         let fetchRequest = NSFetchRequest(entityName: "People")
-        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "close", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         return fetchRequest
     }
@@ -90,7 +90,18 @@ class PeopleTableViewController: UITableViewController, NSFetchedResultsControll
         } else {
             let list  = frc.objectAtIndexPath(indexPath) as! People
             cell.textLabel?.text = list.name
-            cell.detailTextLabel?.text = list.relation
+            
+            var detail = "";
+            if (list.close != nil) {
+                detail += list.close! + ": "
+            }
+            if (list.relation != nil) {
+                detail += list.relation!
+            }
+            cell.detailTextLabel?.text = detail
+
+//          cell.detailTextLabel?.text = list.relation
+
         }
         return cell
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-class PeopleEditViewController: UIViewController {
+class PeopleEditViewController: UIViewController, DataChangedDelegate{
     
     // Initiate UI
     @IBOutlet weak var nameEdit: UITextField!
@@ -16,6 +16,14 @@ class PeopleEditViewController: UIViewController {
     @IBOutlet weak var emailEdit: UITextField!
     @IBOutlet weak var relationEdit: UITextField!
     @IBOutlet weak var addressEdit: UITextField!
+    
+    // Close stepper select
+    @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var closeEdit: UITextField!
+    @IBAction func closeSteper(sender: AnyObject) {
+        closeEdit.text = "\(Int(stepper.value))"
+    }
+    
     
     // Initiate
     
@@ -31,7 +39,12 @@ class PeopleEditViewController: UIViewController {
             emailEdit.text = nItem?.email
             relationEdit.text = nItem?.relation
             addressEdit.text = nItem?.address
+            closeEdit.text = nItem?.close
+            stepper.value = Double((nItem?.close)!)!
         }
+        closeEdit.text = "\(Int(stepper.value))"
+        relationEdit.text = "Manager"
+        addressEdit.text = "UK"
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,14 +60,14 @@ class PeopleEditViewController: UIViewController {
     @IBAction func cancelTap(sender: AnyObject) {
         self.view.endEditing(true)
         
-        let alert = UIAlertController(title: "Unsaved People", message: "Confirm Exit ?", preferredStyle: UIAlertControllerStyle.Alert)
-        let actionYes = UIAlertAction(title: "Exit", style: UIAlertActionStyle.Default) { Void in
+//        let alert = UIAlertController(title: "Unsaved People", message: "Confirm Exit ?", preferredStyle: UIAlertControllerStyle.Alert)
+//        let actionYes = UIAlertAction(title: "Exit", style: UIAlertActionStyle.Default) { Void in
             self.dismiss()
-        }
-        let actionCancel = UIAlertAction(title: "Remain", style: UIAlertActionStyle.Default, handler: nil)
-        self.presentViewController(alert, animated: true, completion: nil)
-        alert.addAction(actionYes)
-        alert.addAction(actionCancel)
+//        }
+//        let actionCancel = UIAlertAction(title: "Remain", style: UIAlertActionStyle.Default, handler: nil)
+//        self.presentViewController(alert, animated: true, completion: nil)
+//        alert.addAction(actionYes)
+//        alert.addAction(actionCancel)
     }
     @IBAction func saveTap(sender: AnyObject) {
         if nItem != nil {
@@ -78,7 +91,6 @@ class PeopleEditViewController: UIViewController {
                 let actionCancel = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: nil)
                 self.presentViewController(alert, animated: true, completion: nil)
                 alert.addAction(actionCancel)
-                print("Not Saving")
                 
             } else {
                 nItem.setValue(nameEdit.text, forKey: "name")
@@ -86,8 +98,8 @@ class PeopleEditViewController: UIViewController {
                 nItem.setValue(emailEdit.text, forKey: "email")
                 nItem.setValue(relationEdit.text, forKey: "relation")
                 nItem.setValue(addressEdit.text, forKey: "address")
+                nItem.setValue(closeEdit.text, forKey: "close")
                 try context.save()
-                print("Saving")
             }
         }
         catch {
@@ -100,10 +112,26 @@ class PeopleEditViewController: UIViewController {
         nItem!.setValue(emailEdit.text, forKey: "email")
         nItem!.setValue(relationEdit.text, forKey: "relation")
         nItem!.setValue(addressEdit.text, forKey: "address")
+        nItem!.setValue(closeEdit.text, forKey: "close")
+
         do {
             try context.save()
         }
         catch {
         }
     }
+    
+    // Delegate Setting
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let controller = segue.destinationViewController as? RelationSelectTableViewController {
+            controller.delegate = self
+        }
+    }
+    
+    func dataChanged(data: [String]) {
+        relationEdit.text = data.joinWithSeparator(" / ")
+    }
+    
 }
+

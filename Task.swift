@@ -1,5 +1,5 @@
 //
-//  People.swift
+//  Task.swift
 //  ToDo
 //
 //  Created by 段鸿易 on 12/6/16.
@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-class People: NSManagedObject {
+class Task: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
 

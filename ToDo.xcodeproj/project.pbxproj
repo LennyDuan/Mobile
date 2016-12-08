@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B88B25811DF611E00045077C /* People+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88B257F1DF611E00045077C /* People+CoreDataProperties.swift */; };
-		B88B25821DF611E00045077C /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88B25801DF611E00045077C /* People.swift */; };
+		B8700C001DF768BD001027DB /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8700BFC1DF768BD001027DB /* People.swift */; };
+		B8700C021DF768BD001027DB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8700BFE1DF768BD001027DB /* Task.swift */; };
+		B8700C041DF76949001027DB /* TaskEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8700C031DF76949001027DB /* TaskEditViewController.swift */; };
+		B8700C061DF88D08001027DB /* RelationSelectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8700C051DF88D08001027DB /* RelationSelectTableViewController.swift */; };
+		B8700C081DF8BA70001027DB /* RelationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8700C071DF8BA70001027DB /* RelationItem.swift */; };
+		B8700C0C1DF8C8D3001027DB /* DataChangeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8700C0B1DF8C8D3001027DB /* DataChangeDelegate.swift */; };
+		B8700C101DFA1478001027DB /* People+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8700C0E1DFA1478001027DB /* People+CoreDataProperties.swift */; };
+		B8700C111DFA1478001027DB /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8700C0F1DFA1478001027DB /* Task+CoreDataProperties.swift */; };
 		B88B25841DF612730045077C /* PeopleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88B25831DF612730045077C /* PeopleTableViewController.swift */; };
 		B88B25861DF612A70045077C /* PeopleEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88B25851DF612A70045077C /* PeopleEditViewController.swift */; };
 		B89F59751DA6DB44007324D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89F59741DA6DB44007324D7 /* AppDelegate.swift */; };
@@ -19,8 +25,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B88B257F1DF611E00045077C /* People+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "People+CoreDataProperties.swift"; path = "../People+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		B88B25801DF611E00045077C /* People.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = People.swift; path = ../People.swift; sourceTree = "<group>"; };
+		B8700BF31DF760C9001027DB /* ToDo People 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ToDo People 2.xcdatamodel"; sourceTree = "<group>"; };
+		B8700BFA1DF768AD001027DB /* ToDo 1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ToDo 1.1.xcdatamodel"; sourceTree = "<group>"; };
+		B8700BFC1DF768BD001027DB /* People.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = People.swift; path = ../People.swift; sourceTree = "<group>"; };
+		B8700BFE1DF768BD001027DB /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Task.swift; path = ../Task.swift; sourceTree = "<group>"; };
+		B8700C031DF76949001027DB /* TaskEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskEditViewController.swift; sourceTree = "<group>"; };
+		B8700C051DF88D08001027DB /* RelationSelectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationSelectTableViewController.swift; sourceTree = "<group>"; };
+		B8700C071DF8BA70001027DB /* RelationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationItem.swift; sourceTree = "<group>"; };
+		B8700C0B1DF8C8D3001027DB /* DataChangeDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataChangeDelegate.swift; sourceTree = "<group>"; };
+		B8700C0D1DFA1468001027DB /* ToDo 1. 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ToDo 1. 2.xcdatamodel"; sourceTree = "<group>"; };
+		B8700C0E1DFA1478001027DB /* People+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "People+CoreDataProperties.swift"; path = "../People+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B8700C0F1DFA1478001027DB /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Task+CoreDataProperties.swift"; path = "../Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B88B25831DF612730045077C /* PeopleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeopleTableViewController.swift; path = ../PeopleTableViewController.swift; sourceTree = "<group>"; };
 		B88B25851DF612A70045077C /* PeopleEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleEditViewController.swift; sourceTree = "<group>"; };
 		B89F59711DA6DB44007324D7 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,8 +61,10 @@
 		B88B25771DF60D7D0045077C /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				B88B257F1DF611E00045077C /* People+CoreDataProperties.swift */,
-				B88B25801DF611E00045077C /* People.swift */,
+				B8700C0E1DFA1478001027DB /* People+CoreDataProperties.swift */,
+				B8700C0F1DFA1478001027DB /* Task+CoreDataProperties.swift */,
+				B8700BFC1DF768BD001027DB /* People.swift */,
+				B8700BFE1DF768BD001027DB /* Task.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -55,6 +72,7 @@
 		B88B25781DF60D910045077C /* NewTask */ = {
 			isa = PBXGroup;
 			children = (
+				B8700C031DF76949001027DB /* TaskEditViewController.swift */,
 			);
 			name = NewTask;
 			sourceTree = "<group>";
@@ -62,6 +80,11 @@
 		B88B25791DF60DA10045077C /* NewAssignee */ = {
 			isa = PBXGroup;
 			children = (
+				B8700C0B1DF8C8D3001027DB /* DataChangeDelegate.swift */,
+				B88B25831DF612730045077C /* PeopleTableViewController.swift */,
+				B88B25851DF612A70045077C /* PeopleEditViewController.swift */,
+				B8700C051DF88D08001027DB /* RelationSelectTableViewController.swift */,
+				B8700C071DF8BA70001027DB /* RelationItem.swift */,
 			);
 			name = NewAssignee;
 			sourceTree = "<group>";
@@ -86,8 +109,6 @@
 		B88B257C1DF60E020045077C /* People */ = {
 			isa = PBXGroup;
 			children = (
-				B88B25831DF612730045077C /* PeopleTableViewController.swift */,
-				B88B25851DF612A70045077C /* PeopleEditViewController.swift */,
 			);
 			name = People;
 			sourceTree = "<group>";
@@ -211,10 +232,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B88B25821DF611E00045077C /* People.swift in Sources */,
+				B8700C041DF76949001027DB /* TaskEditViewController.swift in Sources */,
+				B8700C0C1DF8C8D3001027DB /* DataChangeDelegate.swift in Sources */,
+				B8700C021DF768BD001027DB /* Task.swift in Sources */,
+				B8700C111DFA1478001027DB /* Task+CoreDataProperties.swift in Sources */,
 				B89F597D1DA6DB44007324D7 /* ToDo.xcdatamodeld in Sources */,
-				B88B25811DF611E00045077C /* People+CoreDataProperties.swift in Sources */,
 				B89F59751DA6DB44007324D7 /* AppDelegate.swift in Sources */,
+				B8700C001DF768BD001027DB /* People.swift in Sources */,
+				B8700C061DF88D08001027DB /* RelationSelectTableViewController.swift in Sources */,
+				B8700C101DFA1478001027DB /* People+CoreDataProperties.swift in Sources */,
+				B8700C081DF8BA70001027DB /* RelationItem.swift in Sources */,
 				B88B25841DF612730045077C /* PeopleTableViewController.swift in Sources */,
 				B88B25861DF612A70045077C /* PeopleEditViewController.swift in Sources */,
 			);
@@ -374,9 +401,12 @@
 		B89F597B1DA6DB44007324D7 /* ToDo.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				B8700C0D1DFA1468001027DB /* ToDo 1. 2.xcdatamodel */,
+				B8700BFA1DF768AD001027DB /* ToDo 1.1.xcdatamodel */,
+				B8700BF31DF760C9001027DB /* ToDo People 2.xcdatamodel */,
 				B89F597C1DA6DB44007324D7 /* ToDo.xcdatamodel */,
 			);
-			currentVersion = B89F597C1DA6DB44007324D7 /* ToDo.xcdatamodel */;
+			currentVersion = B8700C0D1DFA1468001027DB /* ToDo 1. 2.xcdatamodel */;
 			path = ToDo.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
