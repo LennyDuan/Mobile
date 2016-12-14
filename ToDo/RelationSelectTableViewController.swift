@@ -27,8 +27,8 @@ class RelationSelectTableViewController: UIViewController, UITableViewDataSource
             RelationItem(data: "Intermediary"),
             RelationItem(data: "Acquaintance"),
             RelationItem(data: "Employee"),
-            RelationItem(data: "Stranger")
-
+            RelationItem(data: "Stranger"),
+            RelationItem(data: "Others")
         ]
     }
 

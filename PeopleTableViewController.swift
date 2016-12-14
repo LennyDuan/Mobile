@@ -86,18 +86,31 @@ class PeopleTableViewController: UITableViewController, NSFetchedResultsControll
                 
         if self.resultSearchController.active {
             cell.textLabel?.text = self.filteredPeoplePairs[indexPath.row].name!
-            cell.detailTextLabel?.text = self.filteredPeoplePairs[indexPath.row].relation
+            cell.detailTextLabel?.text = self.filteredPeoplePairs[indexPath.row].relation! + " -> " +
+                String(self.filteredPeoplePairs[indexPath.row].tasks!.count) + " Tasks"
+
         } else {
             let list  = frc.objectAtIndexPath(indexPath) as! People
-            cell.textLabel?.text = list.name
-            
-            var detail = "";
-            if (list.close != nil) {
-                detail += list.close! + ": "
-            }
+            var text = ""
+//            if (list.close != nil) {
+//                text += list.close! +  " - "
+//            }
+            text += list.name!
+            text += " - "
             if (list.relation != nil) {
-                detail += list.relation!
+                text += list.relation!
             }
+            cell.textLabel?.text = text
+
+            var detail = "Total: "
+            detail += String(list.tasks!.count) + " Tasks"
+            
+            let searchPredicate = NSPredicate(format: "self.status != %@", "Close")
+            let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [searchPredicate])
+            let array = list.tasks!.allObjects as NSArray
+            let remainArray = array.filteredArrayUsingPredicate(predicate).count
+            
+            detail += "                                         -> Remain: " + "\(remainArray)" + " Tasks"
             cell.detailTextLabel?.text = detail
 
 //          cell.detailTextLabel?.text = list.relation
@@ -131,7 +144,7 @@ class PeopleTableViewController: UITableViewController, NSFetchedResultsControll
             let cell = sender as! UITableViewCell
             let indexPath = tableView.indexPathForCell(cell)
             
-            let itemControler: PeopleEditViewController = segue.destinationViewController as! PeopleEditViewController
+            let itemControler: PeopleTaskDisplayTableViewController = segue.destinationViewController as! PeopleTaskDisplayTableViewController
             
             if self.resultSearchController.active
             {
