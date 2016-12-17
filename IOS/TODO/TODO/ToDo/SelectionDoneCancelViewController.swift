@@ -17,6 +17,6 @@ class SelectionDoneCancelViewController: UIViewController {
     }
 
     @IBAction func cancelOperation() {
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }

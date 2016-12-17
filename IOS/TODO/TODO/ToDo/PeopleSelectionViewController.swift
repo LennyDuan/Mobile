@@ -11,19 +11,19 @@ import CoreData
 class PeopleSelectionViewController: SelectionDoneCancelViewController, UITableViewDataSource, UITableViewDelegate {
 
     func getItemArray() {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         
-        let fetchRequest = NSFetchRequest(entityName: "People")
-        var array : NSArray = [People]()
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "People")
+        var array : NSArray = [People]() as NSArray
         do {
-            array = try managedContext.executeFetchRequest(fetchRequest) as! [People]
+            array = try managedContext.fetch(fetchRequest) as! [People] as NSArray
         } catch {
             print("Error")
         }
         
         for item in array {
-            items.append(item.name)
+            items.append((item as AnyObject).name)
         }
     }
     
@@ -36,24 +36,24 @@ class PeopleSelectionViewController: SelectionDoneCancelViewController, UITableV
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("peopleSelectionCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "peopleSelectionCell")!
         cell.textLabel!.text = items[indexPath.row]
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tag = items[indexPath.row];
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
         delegate?.peopleChanged(tag)
     }
     

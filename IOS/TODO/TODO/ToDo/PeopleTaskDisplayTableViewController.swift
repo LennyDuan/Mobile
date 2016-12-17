@@ -8,6 +8,30 @@
 
 import UIKit
 import CoreData
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 class PeopleTaskDisplayTableViewController: UITableViewController {
     
     
@@ -16,7 +40,7 @@ class PeopleTaskDisplayTableViewController: UITableViewController {
     var nItem: People? = nil
     var NStasks: NSSet? = nil
     var tasks: [Task] = []
-    var context: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    var context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
     // view Load
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +56,7 @@ class PeopleTaskDisplayTableViewController: UITableViewController {
         }
         
         tasks = tasks.filter() { $0.self.status != "Close" }
-        tasks = tasks.sort({ $0.priority > $1.priority })
+        tasks = tasks.sorted(by: { $0.priority > $1.priority })
         
     }
     override func didReceiveMemoryWarning() {
@@ -40,21 +64,21 @@ class PeopleTaskDisplayTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         
         return 1
     }
     
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return tasks.count
     }
     
     
     // List Cell Operation
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("peopleTaskListCell", forIndexPath: indexPath) as! ListTableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "peopleTaskListCell", for: indexPath) as! ListTableViewCell
         
         let list  = tasks[indexPath.row]
         if ( list.title != nil) { cell.titleLabel?.text = list.title! }
@@ -68,17 +92,17 @@ class PeopleTaskDisplayTableViewController: UITableViewController {
         return cell
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (nItem != nil) {
             if segue.identifier == "assignEdit"   {
-                let itemControler: PeopleEditViewController = segue.destinationViewController as! PeopleEditViewController
+                let itemControler: PeopleEditViewController = segue.destination as! PeopleEditViewController
                 itemControler.nItem = nItem
             }
         } else if segue.identifier == "edit"   {
             let cell = sender as! ListTableViewCell
-            let indexPath = tableView.indexPathForCell(cell)
+            let indexPath = tableView.indexPath(for: cell)
             
-            let itemControler: TaskEditViewController = segue.destinationViewController as! TaskEditViewController
+            let itemControler: TaskEditViewController = segue.destination as! TaskEditViewController
             
             let nItem: Task = tasks[(indexPath?.row)!]
             itemControler.nItem = nItem
@@ -87,26 +111,26 @@ class PeopleTaskDisplayTableViewController: UITableViewController {
     }
     
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
             
             let managedObject: NSManagedObject
             
             managedObject = tasks[indexPath.row]
             
             
-            let alert = UIAlertController(title: "关闭任务", message: "任务已完成，确认关闭", preferredStyle: UIAlertControllerStyle.Alert)
-            let actionYes = UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default) { Void in
+            let alert = UIAlertController(title: "关闭任务", message: "任务已完成，确认关闭", preferredStyle: UIAlertControllerStyle.alert)
+            let actionYes = UIAlertAction(title: "Yes", style: UIAlertActionStyle.default) { Void in
                 self.closeTask(managedObject)
             }
-            let actionCancel = UIAlertAction(title: "No", style: UIAlertActionStyle.Default, handler: nil)
-            self.presentViewController(alert, animated: true, completion: nil)
+            let actionCancel = UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: nil)
+            self.present(alert, animated: true, completion: nil)
             alert.addAction(actionYes)
             alert.addAction(actionCancel)
         }
     }
     
-    func closeTask(managedObject: NSManagedObject) {
+    func closeTask(_ managedObject: NSManagedObject) {
         managedObject.setValue("Close", forKey: "status")
         do {
             try context.save()

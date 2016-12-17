@@ -15,33 +15,33 @@ class endSelectionViewController: SelectionDoneCancelViewController, UIPickerVie
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    let today = NSDate()
-    let formatter = NSDateFormatter();
+    let today = Date()
+    let formatter = DateFormatter();
 
     override func viewDidLoad() {
         super.viewDidLoad()
         formatter.dateFormat = "MMM dd YYYY EEE"
-        startLabel.text = formatter.stringFromDate(today)
-        endLabel.text = formatter.stringFromDate(today)
+        startLabel.text = formatter.string(from: today)
+        endLabel.text = formatter.string(from: today)
         dayLabel.text = "1 Days"
-        datePicker.addTarget(self, action: #selector(endSelectionViewController.displayDate(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        datePicker.addTarget(self, action: #selector(endSelectionViewController.displayDate(_:)), for: UIControlEvents.valueChanged)
     }
     
-    func dismissWithData(data: String) {
-        dismissViewControllerAnimated(true, completion: nil)
+    func dismissWithData(_ data: String) {
+        dismiss(animated: true, completion: nil)
         delegate?.endDateChanged(data)
     }
     
-    @IBAction func confirmTap(sender: AnyObject){
+    @IBAction func confirmTap(_ sender: AnyObject){
         dismissWithData(endLabel.text!)
     }
-    @IBAction func displayDate(sender: AnyObject) {
+    @IBAction func displayDate(_ sender: AnyObject) {
         formatter.dateFormat = "MMM dd YYYY EEE"
-        endLabel.text = formatter.stringFromDate(datePicker.date)
+        endLabel.text = formatter.string(from: datePicker.date)
 
-        let currentCalendar = NSCalendar.currentCalendar()
-        let timeUnitDay = NSCalendarUnit.Day
-        let daysBetween = currentCalendar.components(timeUnitDay, fromDate: today, toDate: datePicker.date, options: NSCalendarOptions.MatchStrictly)
+        let currentCalendar = Calendar.current
+        let timeUnitDay = NSCalendar.Unit.day
+        let daysBetween = (currentCalendar as NSCalendar).components(timeUnitDay, from: today, to: datePicker.date, options: NSCalendar.Options.matchStrictly)
         let days = daysBetween.day
         
         dayLabel.text = "\(days) Days"

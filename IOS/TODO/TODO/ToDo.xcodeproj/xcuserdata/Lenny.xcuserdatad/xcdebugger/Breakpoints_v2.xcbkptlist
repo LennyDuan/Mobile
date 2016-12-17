@@ -69,22 +69,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PeopleTableViewController.swift"
-            timestampString = "503303002.663612"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "tableView(tableView:cellForRowAtIndexPath:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -101,11 +85,11 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ToDo.PeopleEditViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; ToDo.PeopleEditViewController"
+                  symbolName = "ToDo.PeopleEditViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; ToDo.PeopleEditViewController"
                   moduleName = "ToDo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Lenny/Documents/AppleApp/ToDo/ToDo/PeopleEditViewController.swift"
-                  timestampString = "503302282.98037"
+                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOSAPP/IOS/TODO/TODO/ToDo/PeopleEditViewController.swift"
+                  timestampString = "503698046.52481"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -116,11 +100,41 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
+                  symbolName = "ToDo.PeopleEditViewController.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; ToDo.PeopleEditViewController"
+                  moduleName = "ToDo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOSAPP/IOS/TODO/TODO/ToDo/PeopleEditViewController.swift"
+                  timestampString = "503698046.52726"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDo.PeopleEditViewController.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;ToDo.PeopleEditViewController&gt;"
+                  moduleName = "ToDo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOSAPP/IOS/TODO/TODO/ToDo/PeopleEditViewController.swift"
+                  timestampString = "503698046.529968"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
                   symbolName = "ToDo.PeopleEditViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;ToDo.PeopleEditViewController&gt;"
                   moduleName = "ToDo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Lenny/Documents/AppleApp/ToDo/ToDo/PeopleEditViewController.swift"
-                  timestampString = "503302282.980648"
+                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOSAPP/IOS/TODO/TODO/ToDo/PeopleEditViewController.swift"
+                  timestampString = "503698046.532892"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -152,8 +166,8 @@
                   symbolName = "ToDo.PeopleEditViewController.nameEdit.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UITextField&gt;"
                   moduleName = "ToDo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Lenny/Documents/AppleApp/ToDo/ToDo/PeopleEditViewController.swift"
-                  timestampString = "503302282.982709"
+                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOSAPP/IOS/TODO/TODO/ToDo/PeopleEditViewController.swift"
+                  timestampString = "503698046.542633"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -164,11 +178,11 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ToDo.PeopleEditViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; ToDo.PeopleEditViewController"
+                  symbolName = "ToDo.PeopleEditViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; ToDo.PeopleEditViewController"
                   moduleName = "ToDo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Lenny/Documents/AppleApp/ToDo/ToDo/PeopleEditViewController.swift"
-                  timestampString = "503302282.983249"
+                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOSAPP/IOS/TODO/TODO/ToDo/PeopleEditViewController.swift"
+                  timestampString = "503698046.548697"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -182,8 +196,8 @@
                   symbolName = "ToDo.PeopleEditViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;ToDo.PeopleEditViewController&gt;"
                   moduleName = "ToDo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Lenny/Documents/AppleApp/ToDo/ToDo/PeopleEditViewController.swift"
-                  timestampString = "503302282.983471"
+                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOSAPP/IOS/TODO/TODO/ToDo/PeopleEditViewController.swift"
+                  timestampString = "503698046.551934"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -206,7 +220,7 @@
             startingLineNumber = "43"
             endingLineNumber = "43"
             landmarkName = "viewDidLoad()"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -222,7 +236,7 @@
             startingLineNumber = "95"
             endingLineNumber = "95"
             landmarkName = "fetchPeople()"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -237,8 +251,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
             endingLineNumber = "98"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
-            landmarkType = "5">
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -254,7 +268,7 @@
             startingLineNumber = "25"
             endingLineNumber = "25"
             landmarkName = "refreshTap(_:)"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -270,7 +284,7 @@
             startingLineNumber = "61"
             endingLineNumber = "61"
             landmarkName = "setupSummary()"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -285,23 +299,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "108"
             endingLineNumber = "108"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PeopleTableViewController.swift"
-            timestampString = "503292170.375846"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "tableView(tableView:cellForRowAtIndexPath:)"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -312,13 +310,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToDo/SummaryViewController.swift"
-            timestampString = "503302281.785926"
+            timestampString = "503698041.000925"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "prepareForSegue(_:sender:)"
-            landmarkType = "5">
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -328,13 +326,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToDo/PeopleTaskDisplayTableViewController.swift"
-            timestampString = "503300880.584183"
+            timestampString = "503698041.000925"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
+            startingLineNumber = "11"
+            endingLineNumber = "11">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -344,13 +340,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToDo/SummaryViewController.swift"
-            timestampString = "503302766.875055"
+            timestampString = "503698041.000925"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "prepareForSegue(_:sender:)"
-            landmarkType = "5">
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDo/HistoryListTableViewController.swift"
+            timestampString = "503698041.000925"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "updateSearchResults(for:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

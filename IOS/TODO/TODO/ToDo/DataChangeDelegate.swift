@@ -10,6 +10,6 @@ import Foundation
 
 protocol DataChangedDelegate {
     
-    func dataChanged(data: [String]) -> Void
+    func dataChanged(_ data: [String]) -> Void
     
 }

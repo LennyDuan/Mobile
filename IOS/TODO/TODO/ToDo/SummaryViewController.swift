@@ -22,7 +22,7 @@ class SummaryViewController: UIViewController, NSFetchedResultsControllerDelegat
     @IBOutlet weak var dayNeed: UILabel!
     @IBOutlet weak var todayLabel: UILabel!
     
-    @IBAction func refreshTap(sender: AnyObject) {
+    @IBAction func refreshTap(_ sender: AnyObject) {
         setupSummary()
     }
     
@@ -35,20 +35,20 @@ class SummaryViewController: UIViewController, NSFetchedResultsControllerDelegat
         super.didReceiveMemoryWarning()
     }
     
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         
     }
     
-    let managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    let fetchRequest = NSFetchRequest(entityName: "Task")
-    var array : NSArray = [Task]()
+    let managedContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
+    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
+    var array : NSArray = [Task]() as NSArray
     var currentDate : String = ""
     var dateArray : [String] = []
     var month : String = ""
     var year : String = ""
     func setupSummary() {
         do {
-            array = try managedContext.executeFetchRequest(fetchRequest) as! [Task]
+            array = try managedContext.fetch(fetchRequest) as! [Task] as NSArray
         } catch {
             print("Error")
         }
@@ -73,65 +73,69 @@ class SummaryViewController: UIViewController, NSFetchedResultsControllerDelegat
         totalTask.text = "\(array.count)"
         
         var predicate = NSCompoundPredicate(notPredicateWithSubpredicate: statusOpenPredicate)
-        totalNeed.text =  "\(array.filteredArrayUsingPredicate(predicate).count)"
+        totalNeed.text =  "\(array.filtered(using: predicate).count)"
         
         predicate = NSCompoundPredicate(notPredicateWithSubpredicate: statusClosePredicate)
-        totalDone.text =  "\(array.filteredArrayUsingPredicate(predicate).count)"
+        totalDone.text =  "\(array.filtered(using: predicate).count)"
     }
     
-    func setMonthTask(month: String, year: String) {
+    func setMonthTask(_ month: String, year: String) {
         let searchPredicate = NSPredicate(format: "(self.end CONTAINS[c] %@) AND (self.end CONTAINS[c] %@)", month, year)
         var predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [searchPredicate])
-        monthTask.text =  "\(array.filteredArrayUsingPredicate(predicate).count)"
+        monthTask.text =  "\(array.filtered(using: predicate).count)"
 
         predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [searchPredicate, statusOpenPredicate])
-        monthNeed.text =  "\(array.filteredArrayUsingPredicate(predicate).count)"
+        monthNeed.text =  "\(array.filtered(using: predicate).count)"
         
         predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [searchPredicate, statusClosePredicate])
-        monthDone.text =  "\(array.filteredArrayUsingPredicate(predicate).count)"
+        monthDone.text =  "\(array.filtered(using: predicate).count)"
     }
     
-    func setTodayTask(date: String) {
+    func setTodayTask(_ date: String) {
         let searchPredicate = NSPredicate(format: "self.end CONTAINS[c] %@", date)
         var predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [searchPredicate])
-        dayTask.text =  "\(array.filteredArrayUsingPredicate(predicate).count)"
+        dayTask.text =  "\(array.filtered(using: predicate).count)"
         
         predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [searchPredicate, statusOpenPredicate])
-        dayNeed.text =  "\(array.filteredArrayUsingPredicate(predicate).count)"
+        dayNeed.text =  "\(array.filtered(using: predicate).count)"
         
         predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [searchPredicate, statusClosePredicate])
-        dayDone.text =  "\(array.filteredArrayUsingPredicate(predicate).count)"
+        dayDone.text =  "\(array.filtered(using: predicate).count)"
     }
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "dayTask"   {
-            let itemControler: PeopleTaskDisplayTableViewController = segue.destinationViewController as! PeopleTaskDisplayTableViewController
+            let itemControler: PeopleTaskDisplayTableViewController = segue.destination as! PeopleTaskDisplayTableViewController
+
             
-            array = array.filter() { $0.self.end == currentDate }
+            let searchPredicate = NSPredicate(format: "self.end CONTAINS[c] %@", currentDate)
+            let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [searchPredicate, statusOpenPredicate])
+
+            array = array.filtered(using: predicate) as NSArray
             itemControler.tasks = array as! [Task]
         } else if segue.identifier == "monthTask"   {
             
-            let itemControler: PeopleTaskDisplayTableViewController = segue.destinationViewController as! PeopleTaskDisplayTableViewController
+            let itemControler: PeopleTaskDisplayTableViewController = segue.destination as! PeopleTaskDisplayTableViewController
             
             let searchPredicate = NSPredicate(format: "(self.end CONTAINS[c] %@) AND (self.end CONTAINS[c] %@)", month, year)
             let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [searchPredicate, statusOpenPredicate])
-            array = array.filteredArrayUsingPredicate(predicate)
+            array = array.filtered(using: predicate) as NSArray
             itemControler.tasks = array as! [Task]
         }
     }
     
     
     // Get Taday Date
-    let dateFormatter = NSDateFormatter()
+    let dateFormatter = DateFormatter()
     func getDateString() -> String {
-        let currentDate = NSDate()
-        dateFormatter.locale = NSLocale.currentLocale()
+        let currentDate = Date()
+        dateFormatter.locale = Locale.current
         dateFormatter.dateFormat = "MMM dd YYYY EEE"
-        return dateFormatter.stringFromDate(currentDate)
+        return dateFormatter.string(from: currentDate)
     }
     
-    func getDataArray(array: String) -> [String] {
+    func getDataArray(_ array: String) -> [String] {
         return array.characters.split{$0 == " "}.map(String.init)
     }
 }

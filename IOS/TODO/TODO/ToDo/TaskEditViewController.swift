@@ -24,13 +24,13 @@ class TaskEditViewController: UIViewController, TaskDataChangedDelegate {
     
     // Stepper Init
     @IBOutlet weak var priorityStepper: UIStepper!
-    @IBAction func priorityAction(sender: AnyObject) {
+    @IBAction func priorityAction(_ sender: AnyObject) {
         priorityEdit.text = "\(Int(priorityStepper.value))"
 
     }
     
     @IBOutlet weak var hardStepper: UIStepper!
-    @IBAction func hardAction(sender: AnyObject) {
+    @IBAction func hardAction(_ sender: AnyObject) {
         hardEdit.text = "\(Int(hardStepper.value))"
     }
     // SelectDelegate Init
@@ -40,10 +40,10 @@ class TaskEditViewController: UIViewController, TaskDataChangedDelegate {
     @IBOutlet weak var statusSelectBtn: UIButton!
     
     // Initiate
-    let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    let context = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
     var nItem: Task? = nil
-    let formatter = NSDateFormatter();
-    let today = NSDate()
+    let formatter = DateFormatter();
+    let today = Date()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,10 +60,10 @@ class TaskEditViewController: UIViewController, TaskDataChangedDelegate {
             detailEdit.text = nItem?.detail
 
         } else {
-            formatter.locale = NSLocale.currentLocale()
+            formatter.locale = Locale.current
             formatter.dateFormat = "MMM dd YYYY EEE"
-            startEdit.text = formatter.stringFromDate(today)
-            endEdit.text = formatter.stringFromDate(today)
+            startEdit.text = formatter.string(from: today)
+            endEdit.text = formatter.string(from: today)
             tagEdit.text = "Work"
             statusEdit.text = "Open"
         }
@@ -73,11 +73,11 @@ class TaskEditViewController: UIViewController, TaskDataChangedDelegate {
     }
     
     func dismiss() {
-        navigationController?.popToRootViewControllerAnimated(true)
+        navigationController?.popToRootViewController(animated: true)
     }
     
     // Save Tap
-    @IBAction func saveTap(sender: AnyObject) {
+    @IBAction func saveTap(_ sender: AnyObject) {
         if nItem != nil {
             editItem()
         } else {
@@ -88,11 +88,11 @@ class TaskEditViewController: UIViewController, TaskDataChangedDelegate {
     
     func fetchPeople() -> People {
         let context = self.context
-        let fetchRequest = NSFetchRequest(entityName: "People")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "People")
         fetchRequest.predicate = NSPredicate(format: "name == %@", peopleEdit.text!)
         do {
        
-        let objects = try context.executeFetchRequest(fetchRequest) as! [People]
+        let objects = try context.fetch(fetchRequest) as! [People]
         return objects[0]
         } catch {
             fatalError("Failed to fetch employees: \(error)")
@@ -101,17 +101,17 @@ class TaskEditViewController: UIViewController, TaskDataChangedDelegate {
     
     func newItem() {
         let context = self.context
-        let ent = NSEntityDescription.entityForName("Task", inManagedObjectContext: context)
-        let nItem = Task(entity: ent!, insertIntoManagedObjectContext: context)
+        let ent = NSEntityDescription.entity(forEntityName: "Task", in: context)
+        let nItem = Task(entity: ent!, insertInto: context)
         
         let title = titleEdit.text
         let people = peopleEdit.text
         
         do {
             if ((title!.isEmpty) || (people!.isEmpty) ) {
-                let alert = UIAlertController(title: "Invalid Input", message: "Please Input Title && Assignee", preferredStyle: UIAlertControllerStyle.Alert)
-                let actionCancel = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: nil)
-                self.presentViewController(alert, animated: true, completion: nil)
+                let alert = UIAlertController(title: "Invalid Input", message: "Please Input Title && Assignee", preferredStyle: UIAlertControllerStyle.alert)
+                let actionCancel = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default, handler: nil)
+                self.present(alert, animated: true, completion: nil)
                 alert.addAction(actionCancel)
                 
             } else {
@@ -152,21 +152,21 @@ class TaskEditViewController: UIViewController, TaskDataChangedDelegate {
     }
 
     // Delegate
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let controller = segue.destinationViewController as? SelectionDoneCancelViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? SelectionDoneCancelViewController {
             controller.delegate = self
         }
     }
-    func peopleChanged(data: String) {
+    func peopleChanged(_ data: String) {
         peopleEdit.text = data
     }
-    func endDateChanged(data: String) {
+    func endDateChanged(_ data: String) {
         endEdit.text = data
     }
-    func tagChanged(data: String) {
+    func tagChanged(_ data: String) {
         tagEdit.text = data
     }
-    func statusChanged(data: String) {
+    func statusChanged(_ data: String) {
         statusEdit.text = data
     }
 

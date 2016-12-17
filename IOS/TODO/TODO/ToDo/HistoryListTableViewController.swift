@@ -15,15 +15,16 @@ class HistoryListTableViewController: UITableViewController, NSFetchedResultsCon
     
     
     // Core Data List View Initialize: Task
-    var context: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    var frc: NSFetchedResultsController = NSFetchedResultsController()
-    func getFetchedResultController() -> NSFetchedResultsController {
+    var context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
+    var frc: NSFetchedResultsController<Task>?
+    
+    func getFetchedResultController() -> NSFetchedResultsController<Task> {
         frc = NSFetchedResultsController(fetchRequest: listFetchRequest(), managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        return frc
+        return frc!
     }
     
-    func listFetchRequest() ->NSFetchRequest {
-        let fetchRequest = NSFetchRequest(entityName: "Task")
+    func listFetchRequest() ->NSFetchRequest<Task> {
+        let fetchRequest = NSFetchRequest<Task>(entityName: "Task")
         let sortDescriptor = NSSortDescriptor(key: "priority", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         fetchRequest.predicate = NSPredicate(format: "status == %@", "Close" )
@@ -35,10 +36,10 @@ class HistoryListTableViewController: UITableViewController, NSFetchedResultsCon
     override func viewDidLoad() {
         super.viewDidLoad()
         frc = getFetchedResultController()
-        frc.delegate = self
+        frc!.delegate = self
         
         do {
-            try frc.performFetch()
+            try frc!.performFetch()
         } catch {
         }
         
@@ -52,7 +53,7 @@ class HistoryListTableViewController: UITableViewController, NSFetchedResultsCon
     }
     
     
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.reloadData()
     }
     override func didReceiveMemoryWarning() {
@@ -60,32 +61,32 @@ class HistoryListTableViewController: UITableViewController, NSFetchedResultsCon
     }
     
     // MARK: - Table view data source
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if self.resultSearchController.active
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        if self.resultSearchController.isActive
         {
             return 1
         }
-        return frc.sections!.count
+        return frc!.sections!.count
     }
     
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if self.resultSearchController.active
+        if self.resultSearchController.isActive
         {
             return self.filteredTaskPairs.count
         }
         
-        let section = frc.sections![section] as NSFetchedResultsSectionInfo
+        let section = frc!.sections![section] as NSFetchedResultsSectionInfo
         return section.numberOfObjects
     }
     
     
     // List Cell Operation
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("historyListCell", forIndexPath: indexPath) as! ListTableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "historyListCell", for: indexPath) as! ListTableViewCell
         
-        if self.resultSearchController.active {
+        if self.resultSearchController.isActive {
             cell.titleLabel?.text = self.filteredTaskPairs[indexPath.row].title!
             cell.endLabel?.text = self.filteredTaskPairs[indexPath.row].end!
             cell.statusLabel?.text = self.filteredTaskPairs[indexPath.row].status!
@@ -93,7 +94,7 @@ class HistoryListTableViewController: UITableViewController, NSFetchedResultsCon
             cell.peopleLabel?.text = self.filteredTaskPairs[indexPath.row].people?.name
             // cell.tagLabel?.text = self.filteredTaskPairs[indexPath.row].tag
         } else {
-            let list  = frc.objectAtIndexPath(indexPath) as! Task
+            let list  = frc!.object(at: indexPath)
             if ( list.title != nil) { cell.titleLabel?.text = list.title! }
             if ( list.end != nil) { cell.endLabel?.text = list.end! }
             if ( list.status != nil) { cell.statusLabel?.text = list.status! }
@@ -110,17 +111,17 @@ class HistoryListTableViewController: UITableViewController, NSFetchedResultsCon
     
     
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
             // Delete the row from the data source
             let managedObject: NSManagedObject
-            if self.resultSearchController.active
+            if self.resultSearchController.isActive
             {
                 managedObject = filteredTaskPairs[indexPath.row] as NSManagedObject
             }else {
-                managedObject = frc.objectAtIndexPath(indexPath) as! NSManagedObject
+                managedObject = frc!.object(at: indexPath)
             }
-            context.deleteObject(managedObject)
+            context.delete(managedObject)
             do {
                 try context.save()
             } catch {
@@ -129,19 +130,19 @@ class HistoryListTableViewController: UITableViewController, NSFetchedResultsCon
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "edit"   {
             let cell = sender as! ListTableViewCell
-            let indexPath = tableView.indexPathForCell(cell)
+            let indexPath = tableView.indexPath(for: cell)
             
-            let itemControler: TaskEditViewController = segue.destinationViewController as! TaskEditViewController
+            let itemControler: TaskEditViewController = segue.destination as! TaskEditViewController
             
-            if self.resultSearchController.active
+            if self.resultSearchController.isActive
             {
                 let nItem: Task = filteredTaskPairs[(indexPath?.row)!]
                 itemControler.nItem = nItem
             }else {
-                let nItem: Task = frc.objectAtIndexPath(indexPath!) as! Task
+                let nItem: Task = frc!.object(at: indexPath!)
                 itemControler.nItem = nItem
             }
             
@@ -154,16 +155,16 @@ class HistoryListTableViewController: UITableViewController, NSFetchedResultsCon
     var resultSearchController = UISearchController()
     
     
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        self.filteredTaskPairs.removeAll(keepCapacity: false)
+    func updateSearchResults(for searchController: UISearchController) {
+        self.filteredTaskPairs.removeAll(keepingCapacity: false)
         
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
-        let fetchRequest = NSFetchRequest(entityName: "Task")
+        let fetchRequest = NSFetchRequest<Task>(entityName: "Task")
         
-        var array : NSArray = [Task]()
+        var array : NSArray = [Task]() as NSArray
         do {
-            array = try managedContext.executeFetchRequest(fetchRequest) as! [Task]
+            array = try managedContext.fetch(fetchRequest) as NSArray
         } catch {
             print("Error")
         }
@@ -171,7 +172,7 @@ class HistoryListTableViewController: UITableViewController, NSFetchedResultsCon
         let searchPredicate = NSPredicate(format: "(self.people.name CONTAINS[c] %@) OR (self.title CONTAINS[c] %@)", searchController.searchBar.text!, searchController.searchBar.text!)
         let statuPredicate = NSPredicate(format: "self.status == %@", "Close", searchController.searchBar.text!, searchController.searchBar.text!)
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [searchPredicate, statuPredicate])
-        filteredTaskPairs = array.filteredArrayUsingPredicate(predicate) as! [Task]
+        filteredTaskPairs = array.filtered(using: predicate) as! [Task]
         self.definesPresentationContext = true
         self.tableView.reloadData()
     }

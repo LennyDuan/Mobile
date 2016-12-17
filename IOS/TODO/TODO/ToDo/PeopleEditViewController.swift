@@ -20,14 +20,14 @@ class PeopleEditViewController: UIViewController, DataChangedDelegate{
     // Close stepper select
     @IBOutlet weak var stepper: UIStepper!
     @IBOutlet weak var closeEdit: UITextField!
-    @IBAction func closeSteper(sender: AnyObject) {
+    @IBAction func closeSteper(_ sender: AnyObject) {
         closeEdit.text = "\(Int(stepper.value))"
     }
     
     
     // Initiate
     
-    let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    let context = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
     var nItem: People? = nil
     
     override func viewDidLoad() {
@@ -54,10 +54,10 @@ class PeopleEditViewController: UIViewController, DataChangedDelegate{
     // UI Bar button action
     
     func dismiss() {
-        navigationController?.popToRootViewControllerAnimated(true)
+        navigationController?.popToRootViewController(animated: true)
     }
     
-    @IBAction func cancelTap(sender: AnyObject) {
+    @IBAction func cancelTap(_ sender: AnyObject) {
         self.view.endEditing(true)
         
 //        let alert = UIAlertController(title: "Unsaved People", message: "Confirm Exit ?", preferredStyle: UIAlertControllerStyle.Alert)
@@ -69,7 +69,7 @@ class PeopleEditViewController: UIViewController, DataChangedDelegate{
 //        alert.addAction(actionYes)
 //        alert.addAction(actionCancel)
     }
-    @IBAction func saveTap(sender: AnyObject) {
+    @IBAction func saveTap(_ sender: AnyObject) {
         if nItem != nil {
             editItem()
         } else {
@@ -80,16 +80,16 @@ class PeopleEditViewController: UIViewController, DataChangedDelegate{
     
     func newItem() {
         let context = self.context
-        let ent = NSEntityDescription.entityForName("People", inManagedObjectContext: context)
-        let nItem = People(entity: ent!, insertIntoManagedObjectContext: context)
+        let ent = NSEntityDescription.entity(forEntityName: "People", in: context)
+        let nItem = People(entity: ent!, insertInto: context)
         
         let name = nameEdit.text
         
         do {
             if ((name!.isEmpty)) {
-                let alert = UIAlertController(title: "Invalid Input", message: "Please Input Name", preferredStyle: UIAlertControllerStyle.Alert)
-                let actionCancel = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: nil)
-                self.presentViewController(alert, animated: true, completion: nil)
+                let alert = UIAlertController(title: "Invalid Input", message: "Please Input Name", preferredStyle: UIAlertControllerStyle.alert)
+                let actionCancel = UIAlertAction(title: "Confirm", style: UIAlertActionStyle.default, handler: nil)
+                self.present(alert, animated: true, completion: nil)
                 alert.addAction(actionCancel)
                 
             } else {
@@ -123,14 +123,14 @@ class PeopleEditViewController: UIViewController, DataChangedDelegate{
     
     // Delegate Setting
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let controller = segue.destinationViewController as? RelationSelectTableViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? RelationSelectTableViewController {
             controller.delegate = self
         }
     }
     
-    func dataChanged(data: [String]) {
-        relationEdit.text = data.joinWithSeparator(" / ")
+    func dataChanged(_ data: [String]) {
+        relationEdit.text = data.joined(separator: " / ")
     }
     
 }

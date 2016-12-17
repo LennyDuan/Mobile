@@ -40,45 +40,45 @@ class RelationSelectTableViewController: UIViewController, UITableViewDataSource
 
     // MARK: - Table view data source
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("relationSelectCell", forIndexPath: indexPath)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "relationSelectCell", for: indexPath)
         
         cell.textLabel!.text = items[indexPath.row].data
         if items[indexPath.row].selected {
-            cell.accessoryType = .Checkmark
+            cell.accessoryType = .checkmark
         }
         else {
-            cell.accessoryType = .None
+            cell.accessoryType = .none
         }
         
         return cell
     }
     
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         items[indexPath.row].selected = !(items[indexPath.row].selected)
         tableView.reloadData()
     }
 
     
-    @IBAction func doneTap(sender: AnyObject) {
+    @IBAction func doneTap(_ sender: AnyObject) {
         dismissWithData(items)
     }
-    @IBAction func cancelTap(sender: AnyObject) {
+    @IBAction func cancelTap(_ sender: AnyObject) {
         dismissWithData([])
     }
     
-    func dismissWithData(data: [RelationItem]) {
-        dismissViewControllerAnimated(true, completion: nil)
+    func dismissWithData(_ data: [RelationItem]) {
+        dismiss(animated: true, completion: nil)
         let content = items.filter({$0.selected}).map({selected in selected.data!})
         delegate?.dataChanged(content)
     }

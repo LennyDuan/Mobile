@@ -9,8 +9,8 @@
 import Foundation
 
 protocol TaskDataChangedDelegate {
-    func peopleChanged(data: String) -> Void
-    func endDateChanged(data: String) -> Void
-    func tagChanged(data: String) -> Void
-    func statusChanged(data: String) -> Void
+    func peopleChanged(_ data: String) -> Void
+    func endDateChanged(_ data: String) -> Void
+    func tagChanged(_ data: String) -> Void
+    func statusChanged(_ data: String) -> Void
 }

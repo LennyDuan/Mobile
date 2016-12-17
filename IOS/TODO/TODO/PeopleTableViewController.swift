@@ -16,15 +16,15 @@ class PeopleTableViewController: UITableViewController, NSFetchedResultsControll
     
     // Core Data List View Initialize: Assignee People
     
-    var context: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    var frc: NSFetchedResultsController = NSFetchedResultsController()
-    func getFetchedResultController() -> NSFetchedResultsController {
+    var context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
+    var frc: NSFetchedResultsController<People>?
+    func getFetchedResultController() -> NSFetchedResultsController<People> {
         frc = NSFetchedResultsController(fetchRequest: listFetchRequest(), managedObjectContext: context, sectionNameKeyPath: "name", cacheName: nil)
-        return frc
+        return frc!
     }
     
-    func listFetchRequest() ->NSFetchRequest {
-        let fetchRequest = NSFetchRequest(entityName: "People")
+    func listFetchRequest() ->NSFetchRequest<People> {
+        let fetchRequest = NSFetchRequest<People>(entityName: "People")
         let sortDescriptor = NSSortDescriptor(key: "close", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         return fetchRequest
@@ -34,10 +34,10 @@ class PeopleTableViewController: UITableViewController, NSFetchedResultsControll
     override func viewDidLoad() {
         super.viewDidLoad()
         frc = getFetchedResultController()
-        frc.delegate = self
+        frc!.delegate = self
         
         do {
-            try frc.performFetch()
+            try frc!.performFetch()
         } catch {
         }
         
@@ -50,7 +50,7 @@ class PeopleTableViewController: UITableViewController, NSFetchedResultsControll
         self.tableView.reloadData()
     }
     
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.reloadData()
     }
 
@@ -59,38 +59,38 @@ class PeopleTableViewController: UITableViewController, NSFetchedResultsControll
     }
     
     // MARK: - Table view data source
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if self.resultSearchController.active
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        if self.resultSearchController.isActive
         {
             return 1
         }
-        return frc.sections!.count
+        return frc!.sections!.count
     }
     
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if self.resultSearchController.active
+        if self.resultSearchController.isActive
         {
             return self.filteredPeoplePairs.count
         }
         
-        let section = frc.sections![section] as NSFetchedResultsSectionInfo
+        let section = frc!.sections![section] as NSFetchedResultsSectionInfo
         return section.numberOfObjects
     }
     
     
     // List Cell Operation
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("peopleCell", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "peopleCell", for: indexPath)
                 
-        if self.resultSearchController.active {
+        if self.resultSearchController.isActive {
             cell.textLabel?.text = self.filteredPeoplePairs[indexPath.row].name!
             cell.detailTextLabel?.text = self.filteredPeoplePairs[indexPath.row].relation! + " -> " +
                 String(self.filteredPeoplePairs[indexPath.row].tasks!.count) + " Tasks"
 
         } else {
-            let list  = frc.objectAtIndexPath(indexPath) as! People
+            let list  = frc!.object(at: indexPath)
             var text = ""
 //            if (list.close != nil) {
 //                text += list.close! +  " - "
@@ -108,7 +108,7 @@ class PeopleTableViewController: UITableViewController, NSFetchedResultsControll
             let searchPredicate = NSPredicate(format: "self.status != %@", "Close")
             let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [searchPredicate])
             let array = list.tasks!.allObjects as NSArray
-            let remainArray = array.filteredArrayUsingPredicate(predicate).count
+            let remainArray = array.filtered(using: predicate).count
             
             detail += "                                         -> Remain: " + "\(remainArray)" + " Tasks"
             cell.detailTextLabel?.text = detail
@@ -121,17 +121,17 @@ class PeopleTableViewController: UITableViewController, NSFetchedResultsControll
     
     
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
             // Delete the row from the data source
             let managedObject: NSManagedObject
-            if self.resultSearchController.active
+            if self.resultSearchController.isActive
             {
                 managedObject = filteredPeoplePairs[indexPath.row] as NSManagedObject
             }else {
-                managedObject = frc.objectAtIndexPath(indexPath) as! NSManagedObject
+                managedObject = frc!.object(at: indexPath)
             }
-            context.deleteObject(managedObject)
+            context.delete(managedObject)
             do {
                 try context.save()
             } catch {
@@ -139,19 +139,19 @@ class PeopleTableViewController: UITableViewController, NSFetchedResultsControll
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "edit"   {
             let cell = sender as! UITableViewCell
-            let indexPath = tableView.indexPathForCell(cell)
+            let indexPath = tableView.indexPath(for: cell)
             
-            let itemControler: PeopleTaskDisplayTableViewController = segue.destinationViewController as! PeopleTaskDisplayTableViewController
+            let itemControler: PeopleTaskDisplayTableViewController = segue.destination as! PeopleTaskDisplayTableViewController
             
-            if self.resultSearchController.active
+            if self.resultSearchController.isActive
             {
                 let nItem: People = filteredPeoplePairs[(indexPath?.row)!]
                 itemControler.nItem = nItem
             }else {
-                let nItem: People = frc.objectAtIndexPath(indexPath!) as! People
+                let nItem: People = frc!.object(at: indexPath!)
                 itemControler.nItem = nItem
             }
             
@@ -164,22 +164,22 @@ class PeopleTableViewController: UITableViewController, NSFetchedResultsControll
     var resultSearchController = UISearchController()
     
     
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        self.filteredPeoplePairs.removeAll(keepCapacity: false)
+    func updateSearchResults(for searchController: UISearchController) {
+        self.filteredPeoplePairs.removeAll(keepingCapacity: false)
         
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         
-        let fetchRequest = NSFetchRequest(entityName: "People")
-        var array : NSArray = [People]()
+        let fetchRequest = NSFetchRequest<People>(entityName: "People")
+        var array : NSArray = [People]() as NSArray
         do {
-            array = try managedContext.executeFetchRequest(fetchRequest) as! [People]
+            array = try managedContext.fetch(fetchRequest) as NSArray
         } catch {
             print("Error")
         }
         
         let searchPredicate = NSPredicate(format: "(self.name CONTAINS[c] %@) OR (self.relation CONTAINS[c] %@)", searchController.searchBar.text!, searchController.searchBar.text!)
-        filteredPeoplePairs = array.filteredArrayUsingPredicate(searchPredicate) as! [People]
+        filteredPeoplePairs = array.filtered(using: searchPredicate) as! [People]
         self.definesPresentationContext = true
         self.tableView.reloadData()
     }
