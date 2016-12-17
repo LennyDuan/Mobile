@@ -30,6 +30,10 @@ class PeopleTableViewController: UITableViewController, NSFetchedResultsControll
         return fetchRequest
     }
     
+
+    @IBAction func refreshTap(_ sender: Any) {
+        tableView.reloadData()
+    }
     // view Load
     override func viewDidLoad() {
         super.viewDidLoad()

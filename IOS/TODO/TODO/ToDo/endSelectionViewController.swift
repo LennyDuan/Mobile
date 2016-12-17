@@ -42,7 +42,8 @@ class endSelectionViewController: SelectionDoneCancelViewController, UIPickerVie
         let currentCalendar = Calendar.current
         let timeUnitDay = NSCalendar.Unit.day
         let daysBetween = (currentCalendar as NSCalendar).components(timeUnitDay, from: today, to: datePicker.date, options: NSCalendar.Options.matchStrictly)
-        let days = daysBetween.day
+        var days : Int
+        days = daysBetween.day!
         
         dayLabel.text = "\(days) Days"
     }

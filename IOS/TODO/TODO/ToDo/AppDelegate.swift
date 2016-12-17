@@ -17,6 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        UINavigationBar.appearance().barTintColor = UIColor(red: 0.93, green: 0.59, blue: 0.59, alpha: 0.8)
+        UITabBar.appearance().barTintColor = UIColor(red: 0.93, green: 0.59, blue: 0.59, alpha: 0.8)
+        
+        UIPickerView.appearance().backgroundColor =  UIColor(red: 0.88, green: 0.59, blue: 0.59, alpha: 0.5)
+        
+        UIButton.appearance().layer.cornerRadius = 20
+        //UIButton.appearance().backgroundColor = UIColor(red: 0.93, green: 0.59, blue: 0.65, alpha: 0.8)
+        UIButton.appearance().layer.masksToBounds = true
+        
         return true
     }
 
