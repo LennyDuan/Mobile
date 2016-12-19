@@ -72,10 +72,10 @@ class SummaryViewController: UIViewController, NSFetchedResultsControllerDelegat
     func setAllTask() {
         totalTask.text = "\(array.count)"
         
-        var predicate = NSCompoundPredicate(notPredicateWithSubpredicate: statusOpenPredicate)
+        var predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [statusOpenPredicate])
         totalNeed.text =  "\(array.filtered(using: predicate).count)"
         
-        predicate = NSCompoundPredicate(notPredicateWithSubpredicate: statusClosePredicate)
+        predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [statusClosePredicate])
         totalDone.text =  "\(array.filtered(using: predicate).count)"
     }
     

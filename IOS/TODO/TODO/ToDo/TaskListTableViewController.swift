@@ -181,7 +181,7 @@ class TaskListTableViewController: UITableViewController, NSFetchedResultsContro
             print("Error")
         }
 
-        let searchPredicate = NSPredicate(format: "(self.end CONTAINS[c] %@) OR (self.tag CONTAINS[c] %@)", searchController.searchBar.text!, searchController.searchBar.text!)
+        let searchPredicate = NSPredicate(format: "(self.end CONTAINS[c] %@) OR (self.tag CONTAINS[c] %@) OR (self.title CONTAINS[c] %@)", searchController.searchBar.text!, searchController.searchBar.text!, searchController.searchBar.text!)
         let statuPredicate = NSPredicate(format: "(self.status != %@)",  "Close", searchController.searchBar.text!, searchController.searchBar.text!)
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [searchPredicate, statuPredicate])
         
