@@ -22,6 +22,6 @@ class CommonViewController: UIViewController {
     
     // Back to last page
     func dismiss() {
-        navigationController?.popToRootViewController(animated: true)
+        _ = navigationController?.popToRootViewController(animated: true)
     }
 }

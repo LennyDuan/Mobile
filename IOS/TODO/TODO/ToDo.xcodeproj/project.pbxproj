@@ -10,14 +10,10 @@
 		B817109A1DFF7ECB008A6CF4 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81710991DFF7ECB008A6CF4 /* SummaryViewController.swift */; };
 		B817109C1DFF930A008A6CF4 /* HistoryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B817109B1DFF930A008A6CF4 /* HistoryListTableViewController.swift */; };
 		B817109E1DFFAB11008A6CF4 /* PeopleTaskDisplayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B817109D1DFFAB11008A6CF4 /* PeopleTaskDisplayTableViewController.swift */; };
-		B8700C001DF768BD001027DB /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8700BFC1DF768BD001027DB /* People.swift */; };
-		B8700C021DF768BD001027DB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8700BFE1DF768BD001027DB /* Task.swift */; };
 		B8700C041DF76949001027DB /* TaskEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8700C031DF76949001027DB /* TaskEditViewController.swift */; };
 		B8700C061DF88D08001027DB /* RelationSelectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8700C051DF88D08001027DB /* RelationSelectTableViewController.swift */; };
 		B8700C081DF8BA70001027DB /* RelationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8700C071DF8BA70001027DB /* RelationItem.swift */; };
 		B8700C0C1DF8C8D3001027DB /* DataChangeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8700C0B1DF8C8D3001027DB /* DataChangeDelegate.swift */; };
-		B8700C101DFA1478001027DB /* People+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8700C0E1DFA1478001027DB /* People+CoreDataProperties.swift */; };
-		B8700C111DFA1478001027DB /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8700C0F1DFA1478001027DB /* Task+CoreDataProperties.swift */; };
 		B8700C131DFB3976001027DB /* TaskDataChangeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8700C121DFB3976001027DB /* TaskDataChangeDelegate.swift */; };
 		B8700C171DFC2C89001027DB /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8700C161DFC2C89001027DB /* TaskListTableViewController.swift */; };
 		B8700C191DFC392A001027DB /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8700C181DFC392A001027DB /* ListTableViewCell.swift */; };
@@ -34,6 +30,7 @@
 		B89F597F1DA6DB44007324D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B89F597E1DA6DB44007324D7 /* Assets.xcassets */; };
 		B89F59821DA6DB44007324D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B89F59801DA6DB44007324D7 /* LaunchScreen.storyboard */; };
 		B8DA22DA1E0BF4E400F8AADE /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DA22D91E0BF4E400F8AADE /* CommonViewController.swift */; };
+		B8DA23361E0C19ED00F8AADE /* ImageEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DA23351E0C19ED00F8AADE /* ImageEditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,15 +39,11 @@
 		B817109D1DFFAB11008A6CF4 /* PeopleTaskDisplayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTaskDisplayTableViewController.swift; sourceTree = "<group>"; };
 		B8700BF31DF760C9001027DB /* ToDo People 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ToDo People 2.xcdatamodel"; sourceTree = "<group>"; };
 		B8700BFA1DF768AD001027DB /* ToDo 1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ToDo 1.1.xcdatamodel"; sourceTree = "<group>"; };
-		B8700BFC1DF768BD001027DB /* People.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = People.swift; path = ../People.swift; sourceTree = "<group>"; };
-		B8700BFE1DF768BD001027DB /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Task.swift; path = ../Task.swift; sourceTree = "<group>"; };
 		B8700C031DF76949001027DB /* TaskEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskEditViewController.swift; sourceTree = "<group>"; };
 		B8700C051DF88D08001027DB /* RelationSelectTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationSelectTableViewController.swift; sourceTree = "<group>"; };
 		B8700C071DF8BA70001027DB /* RelationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationItem.swift; sourceTree = "<group>"; };
 		B8700C0B1DF8C8D3001027DB /* DataChangeDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataChangeDelegate.swift; sourceTree = "<group>"; };
 		B8700C0D1DFA1468001027DB /* ToDo 1. 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ToDo 1. 2.xcdatamodel"; sourceTree = "<group>"; };
-		B8700C0E1DFA1478001027DB /* People+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "People+CoreDataProperties.swift"; path = "../People+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		B8700C0F1DFA1478001027DB /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Task+CoreDataProperties.swift"; path = "../Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B8700C121DFB3976001027DB /* TaskDataChangeDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDataChangeDelegate.swift; sourceTree = "<group>"; };
 		B8700C161DFC2C89001027DB /* TaskListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
 		B8700C181DFC392A001027DB /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
@@ -69,6 +62,8 @@
 		B89F59811DA6DB44007324D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B89F59831DA6DB44007324D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8DA22D91E0BF4E400F8AADE /* CommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
+		B8DA22DB1E0C15C100F8AADE /* ToDo 2.0 Image.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ToDo 2.0 Image.xcdatamodel"; sourceTree = "<group>"; };
+		B8DA23351E0C19ED00F8AADE /* ImageEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageEditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,10 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				B89F597B1DA6DB44007324D7 /* ToDo.xcdatamodeld */,
-				B8700C0E1DFA1478001027DB /* People+CoreDataProperties.swift */,
-				B8700C0F1DFA1478001027DB /* Task+CoreDataProperties.swift */,
-				B8700BFC1DF768BD001027DB /* People.swift */,
-				B8700BFE1DF768BD001027DB /* Task.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -201,6 +192,7 @@
 		B89F59731DA6DB44007324D7 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
+				B8DA23341E0C19DE00F8AADE /* Image */,
 				B8DA22D61E0BF49900F8AADE /* common */,
 				B81710981DFF7EB3008A6CF4 /* summary */,
 				B88B257E1DF60F1F0045077C /* Other */,
@@ -219,6 +211,14 @@
 				B8DA22D91E0BF4E400F8AADE /* CommonViewController.swift */,
 			);
 			name = common;
+			sourceTree = "<group>";
+		};
+		B8DA23341E0C19DE00F8AADE /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				B8DA23351E0C19ED00F8AADE /* ImageEditViewController.swift */,
+			);
+			name = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,7 +248,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Lenny;
 				TargetAttributes = {
 					B89F59701DA6DB44007324D7 = {
@@ -296,20 +296,17 @@
 			files = (
 				B8700C041DF76949001027DB /* TaskEditViewController.swift in Sources */,
 				B8700C0C1DF8C8D3001027DB /* DataChangeDelegate.swift in Sources */,
-				B8700C021DF768BD001027DB /* Task.swift in Sources */,
 				B8700C1C1DFDAB34001027DB /* SelectionDoneCancelViewController.swift in Sources */,
-				B8700C111DFA1478001027DB /* Task+CoreDataProperties.swift in Sources */,
+				B8DA23361E0C19ED00F8AADE /* ImageEditViewController.swift in Sources */,
 				B817109A1DFF7ECB008A6CF4 /* SummaryViewController.swift in Sources */,
 				B817109C1DFF930A008A6CF4 /* HistoryListTableViewController.swift in Sources */,
 				B8700C221DFDF4A4001027DB /* PeopleSelectionViewController.swift in Sources */,
 				B8700C241DFE09C9001027DB /* endSelectionViewController.swift in Sources */,
 				B89F597D1DA6DB44007324D7 /* ToDo.xcdatamodeld in Sources */,
 				B89F59751DA6DB44007324D7 /* AppDelegate.swift in Sources */,
-				B8700C001DF768BD001027DB /* People.swift in Sources */,
 				B8700C131DFB3976001027DB /* TaskDataChangeDelegate.swift in Sources */,
 				B8700C061DF88D08001027DB /* RelationSelectTableViewController.swift in Sources */,
 				B817109E1DFFAB11008A6CF4 /* PeopleTaskDisplayTableViewController.swift in Sources */,
-				B8700C101DFA1478001027DB /* People+CoreDataProperties.swift in Sources */,
 				B8700C081DF8BA70001027DB /* RelationItem.swift in Sources */,
 				B88B25841DF612730045077C /* PeopleTableViewController.swift in Sources */,
 				B8700C201DFDC2B7001027DB /* StatusSelectionViewController.swift in Sources */,
@@ -357,8 +354,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -402,8 +401,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -422,6 +423,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -430,11 +432,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = X2C9B4886S;
 				INFOPLIST_FILE = ToDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.aber.hod8.ToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ToDo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -443,11 +448,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = X2C9B4886S;
 				INFOPLIST_FILE = ToDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.ac.aber.hod8.ToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ToDo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -479,12 +486,13 @@
 		B89F597B1DA6DB44007324D7 /* ToDo.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				B8DA22DB1E0C15C100F8AADE /* ToDo 2.0 Image.xcdatamodel */,
 				B8700C0D1DFA1468001027DB /* ToDo 1. 2.xcdatamodel */,
 				B8700BFA1DF768AD001027DB /* ToDo 1.1.xcdatamodel */,
 				B8700BF31DF760C9001027DB /* ToDo People 2.xcdatamodel */,
 				B89F597C1DA6DB44007324D7 /* ToDo.xcdatamodel */,
 			);
-			currentVersion = B8700C0D1DFA1468001027DB /* ToDo 1. 2.xcdatamodel */;
+			currentVersion = B8DA22DB1E0C15C100F8AADE /* ToDo 2.0 Image.xcdatamodel */;
 			path = ToDo.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G1212" minimumToolsVersion="Xcode 7.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
-    <entity name="Image" syncable="YES">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G1212" minimumToolsVersion="Xcode 7.3" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Image" representedClassName=".Image" syncable="YES" codeGenerationType="class">
         <attribute name="imageData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="task" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Task" inverseName="image" inverseEntity="Task" syncable="YES"/>
     </entity>
-    <entity name="People" representedClassName=".People" syncable="YES">
+    <entity name="People" representedClassName=".People" syncable="YES" codeGenerationType="class">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="close" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
@@ -14,7 +13,7 @@
         <attribute name="relation" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="people" inverseEntity="Task" syncable="YES"/>
     </entity>
-    <entity name="Task" representedClassName=".Task" syncable="YES">
+    <entity name="Task" representedClassName=".Task" syncable="YES" codeGenerationType="class">
         <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="end" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="hard" optional="YES" attributeType="String" syncable="YES"/>
@@ -23,12 +22,11 @@
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tag" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="image" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Image" inverseName="task" inverseEntity="Image" syncable="YES"/>
         <relationship name="people" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="People" inverseName="tasks" inverseEntity="People" syncable="YES"/>
     </entity>
     <elements>
-        <element name="People" positionX="72" positionY="-112" width="128" height="148"/>
-        <element name="Task" positionX="376" positionY="-117" width="128" height="195"/>
-        <element name="Image" positionX="378" positionY="189" width="128" height="90"/>
+        <element name="Image" positionX="252" positionY="-54" width="128" height="75"/>
+        <element name="People" positionX="133" positionY="-144" width="128" height="150"/>
+        <element name="Task" positionX="376" positionY="-117" width="128" height="180"/>
     </elements>
 </model>
