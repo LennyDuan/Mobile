@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-class PeopleEditViewController: UIViewController, DataChangedDelegate{
+class PeopleEditViewController: CommonViewController, DataChangedDelegate{
     
     // Initiate UI
     @IBOutlet weak var nameEdit: UITextField!
@@ -32,7 +32,7 @@ class PeopleEditViewController: UIViewController, DataChangedDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        super.hideKeyboardWhenTappedArround()
         if nItem != nil {
             nameEdit.text = nItem?.name
             mobileEdit.text = nItem?.mobile
@@ -53,16 +53,12 @@ class PeopleEditViewController: UIViewController, DataChangedDelegate{
     
     // UI Bar button action
     
-    func dismiss() {
-        navigationController?.popToRootViewController(animated: true)
-    }
-    
     @IBAction func cancelTap(_ sender: AnyObject) {
         self.view.endEditing(true)
         
 //        let alert = UIAlertController(title: "Unsaved People", message: "Confirm Exit ?", preferredStyle: UIAlertControllerStyle.Alert)
 //        let actionYes = UIAlertAction(title: "Exit", style: UIAlertActionStyle.Default) { Void in
-            self.dismiss()
+            super.dismiss()
 //        }
 //        let actionCancel = UIAlertAction(title: "Remain", style: UIAlertActionStyle.Default, handler: nil)
 //        self.presentViewController(alert, animated: true, completion: nil)
@@ -75,7 +71,7 @@ class PeopleEditViewController: UIViewController, DataChangedDelegate{
         } else {
             newItem()
         }
-        dismiss()
+        super.dismiss()
     }
     
     func newItem() {

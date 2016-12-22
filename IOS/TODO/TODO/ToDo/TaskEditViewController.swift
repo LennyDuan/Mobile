@@ -8,8 +8,7 @@
 
 import UIKit
 import CoreData
-class TaskEditViewController: UIViewController, TaskDataChangedDelegate {
-
+class TaskEditViewController: CommonViewController, TaskDataChangedDelegate {
     
     // Edit Init
     @IBOutlet weak var titleEdit: UITextField!
@@ -47,7 +46,7 @@ class TaskEditViewController: UIViewController, TaskDataChangedDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        super.hideKeyboardWhenTappedArround()
         if nItem != nil {
             titleEdit.text = nItem?.title
             peopleEdit.text = nItem?.people?.name
@@ -69,12 +68,8 @@ class TaskEditViewController: UIViewController, TaskDataChangedDelegate {
         }
         priorityEdit.text = "\(Int(priorityStepper.value))"
         hardEdit.text = "\(Int(hardStepper.value))"
-
     }
     
-    func dismiss() {
-        navigationController?.popToRootViewController(animated: true)
-    }
     
     // Save Tap
     @IBAction func saveTap(_ sender: AnyObject) {
@@ -83,7 +78,7 @@ class TaskEditViewController: UIViewController, TaskDataChangedDelegate {
         } else {
             newItem()
         }
-        dismiss()
+        super.dismiss()
     }
     
     func fetchPeople() -> People {
@@ -127,7 +122,7 @@ class TaskEditViewController: UIViewController, TaskDataChangedDelegate {
                 nItem.setValue(detailEdit.text, forKey: "detail")
                 
                 try context.save()
-                dismiss()
+                super.dismiss()
             }
         }
         catch {

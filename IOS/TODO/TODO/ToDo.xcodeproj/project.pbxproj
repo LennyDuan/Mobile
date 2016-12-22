@@ -33,6 +33,7 @@
 		B89F597D1DA6DB44007324D7 /* ToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B89F597B1DA6DB44007324D7 /* ToDo.xcdatamodeld */; };
 		B89F597F1DA6DB44007324D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B89F597E1DA6DB44007324D7 /* Assets.xcassets */; };
 		B89F59821DA6DB44007324D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B89F59801DA6DB44007324D7 /* LaunchScreen.storyboard */; };
+		B8DA22DA1E0BF4E400F8AADE /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DA22D91E0BF4E400F8AADE /* CommonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		B89F597E1DA6DB44007324D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B89F59811DA6DB44007324D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B89F59831DA6DB44007324D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8DA22D91E0BF4E400F8AADE /* CommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 		B89F59731DA6DB44007324D7 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
+				B8DA22D61E0BF49900F8AADE /* common */,
 				B81710981DFF7EB3008A6CF4 /* summary */,
 				B88B257E1DF60F1F0045077C /* Other */,
 				B88B257A1DF60DEB0045077C /* ListView */,
@@ -208,6 +211,14 @@
 				B89F59781DA6DB44007324D7 /* Main.storyboard */,
 			);
 			path = ToDo;
+			sourceTree = "<group>";
+		};
+		B8DA22D61E0BF49900F8AADE /* common */ = {
+			isa = PBXGroup;
+			children = (
+				B8DA22D91E0BF4E400F8AADE /* CommonViewController.swift */,
+			);
+			name = common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +315,7 @@
 				B8700C201DFDC2B7001027DB /* StatusSelectionViewController.swift in Sources */,
 				B8700C171DFC2C89001027DB /* TaskListTableViewController.swift in Sources */,
 				B88B25861DF612A70045077C /* PeopleEditViewController.swift in Sources */,
+				B8DA22DA1E0BF4E400F8AADE /* CommonViewController.swift in Sources */,
 				B8700C191DFC392A001027DB /* ListTableViewCell.swift in Sources */,
 				B8700C1E1DFDAC64001027DB /* TagSelectionViewController.swift in Sources */,
 			);
