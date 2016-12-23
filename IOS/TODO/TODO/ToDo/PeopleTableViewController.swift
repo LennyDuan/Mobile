@@ -11,8 +11,8 @@ import CoreData
 
 class PeopleTableViewController: UITableViewController, NSFetchedResultsControllerDelegate,
     UISearchResultsUpdating
- {
-
+{
+    
     
     // Core Data List View Initialize: Assignee People
     
@@ -30,7 +30,7 @@ class PeopleTableViewController: UITableViewController, NSFetchedResultsControll
         return fetchRequest
     }
     
-
+    
     @IBAction func refreshTap(_ sender: Any) {
         tableView.reloadData()
     }
@@ -57,7 +57,7 @@ class PeopleTableViewController: UITableViewController, NSFetchedResultsControll
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.reloadData()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -87,25 +87,25 @@ class PeopleTableViewController: UITableViewController, NSFetchedResultsControll
     // List Cell Operation
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "peopleCell", for: indexPath)
-                
+        
         if self.resultSearchController.isActive {
             cell.textLabel?.text = self.filteredPeoplePairs[indexPath.row].name!
             cell.detailTextLabel?.text = self.filteredPeoplePairs[indexPath.row].relation! + " -> " +
                 String(self.filteredPeoplePairs[indexPath.row].tasks!.count) + " Tasks"
-
+            
         } else {
             let list  = frc!.object(at: indexPath)
             var text = ""
-//            if (list.close != nil) {
-//                text += list.close! +  " - "
-//            }
+            //            if (list.close != nil) {
+            //                text += list.close! +  " - "
+            //            }
             text += list.name!
             text += " - "
             if (list.relation != nil) {
                 text += list.relation!
             }
             cell.textLabel?.text = text
-
+            
             var detail = "Total: "
             detail += String(list.tasks!.count) + " Tasks"
             
@@ -116,9 +116,9 @@ class PeopleTableViewController: UITableViewController, NSFetchedResultsControll
             
             detail += "                                         -> Remain: " + "\(remainArray)" + " Tasks"
             cell.detailTextLabel?.text = detail
-
-//          cell.detailTextLabel?.text = list.relation
-
+            
+            //          cell.detailTextLabel?.text = list.relation
+            
         }
         return cell
     }
@@ -161,7 +161,7 @@ class PeopleTableViewController: UITableViewController, NSFetchedResultsControll
             
         }
     }
-
+    
     // MARK: - Search View Controller
     
     var filteredPeoplePairs = [People]()
@@ -190,35 +190,35 @@ class PeopleTableViewController: UITableViewController, NSFetchedResultsControll
     
     // Delete All contacts data
     
-//    @IBAction func deleteData(sender: AnyObject) {
-//        
-//        let alert = UIAlertController(title: "Clean All Assignees?", message: "Are you sure to delete all contacts data? ", preferredStyle: UIAlertControllerStyle.Alert)
-//        let actionYes = UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default) { Void in
-//            self.deleteAllData("People")
-//        }
-//        let actionCancel = UIAlertAction(title: "No", style: UIAlertActionStyle.Default, handler: nil)
-//        self.presentViewController(alert, animated: true, completion: nil)
-//        alert.addAction(actionYes)
-//        alert.addAction(actionCancel)
-//    }
-//    
-//    
-//    func deleteAllData(entity: String)
-//    {
-//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//        let managedContext = appDelegate.managedObjectContext
-//        let fetchRequest = NSFetchRequest(entityName: entity)
-//        fetchRequest.returnsObjectsAsFaults = false
-//        do
-//        {
-//            let results = try managedContext.executeFetchRequest(fetchRequest)
-//            for managedObject in results
-//            {
-//                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
-//                managedContext.deleteObject(managedObjectData)
-//            }
-//        } catch let error as NSError {
-//            print("Detele all data in \(entity) error : \(error) \(error.userInfo)")
-//        }
-//    }
+    //    @IBAction func deleteData(sender: AnyObject) {
+    //
+    //        let alert = UIAlertController(title: "Clean All Assignees?", message: "Are you sure to delete all contacts data? ", preferredStyle: UIAlertControllerStyle.Alert)
+    //        let actionYes = UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default) { Void in
+    //            self.deleteAllData("People")
+    //        }
+    //        let actionCancel = UIAlertAction(title: "No", style: UIAlertActionStyle.Default, handler: nil)
+    //        self.presentViewController(alert, animated: true, completion: nil)
+    //        alert.addAction(actionYes)
+    //        alert.addAction(actionCancel)
+    //    }
+    //
+    //
+    //    func deleteAllData(entity: String)
+    //    {
+    //        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    //        let managedContext = appDelegate.managedObjectContext
+    //        let fetchRequest = NSFetchRequest(entityName: entity)
+    //        fetchRequest.returnsObjectsAsFaults = false
+    //        do
+    //        {
+    //            let results = try managedContext.executeFetchRequest(fetchRequest)
+    //            for managedObject in results
+    //            {
+    //                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
+    //                managedContext.deleteObject(managedObjectData)
+    //            }
+    //        } catch let error as NSError {
+    //            print("Detele all data in \(entity) error : \(error) \(error.userInfo)")
+    //        }
+    //    }
 }

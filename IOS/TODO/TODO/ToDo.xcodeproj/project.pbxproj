@@ -22,7 +22,6 @@
 		B8700C201DFDC2B7001027DB /* StatusSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8700C1F1DFDC2B7001027DB /* StatusSelectionViewController.swift */; };
 		B8700C221DFDF4A4001027DB /* PeopleSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8700C211DFDF4A4001027DB /* PeopleSelectionViewController.swift */; };
 		B8700C241DFE09C9001027DB /* endSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8700C231DFE09C9001027DB /* endSelectionViewController.swift */; };
-		B88B25841DF612730045077C /* PeopleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88B25831DF612730045077C /* PeopleTableViewController.swift */; };
 		B88B25861DF612A70045077C /* PeopleEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88B25851DF612A70045077C /* PeopleEditViewController.swift */; };
 		B89F59751DA6DB44007324D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89F59741DA6DB44007324D7 /* AppDelegate.swift */; };
 		B89F597A1DA6DB44007324D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B89F59781DA6DB44007324D7 /* Main.storyboard */; };
@@ -31,6 +30,7 @@
 		B89F59821DA6DB44007324D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B89F59801DA6DB44007324D7 /* LaunchScreen.storyboard */; };
 		B8DA22DA1E0BF4E400F8AADE /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DA22D91E0BF4E400F8AADE /* CommonViewController.swift */; };
 		B8DA23361E0C19ED00F8AADE /* ImageEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DA23351E0C19ED00F8AADE /* ImageEditViewController.swift */; };
+		B8DA23681E0D89C100F8AADE /* PeopleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DA23671E0D89C100F8AADE /* PeopleTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +52,6 @@
 		B8700C1F1DFDC2B7001027DB /* StatusSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusSelectionViewController.swift; sourceTree = "<group>"; };
 		B8700C211DFDF4A4001027DB /* PeopleSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleSelectionViewController.swift; sourceTree = "<group>"; };
 		B8700C231DFE09C9001027DB /* endSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = endSelectionViewController.swift; sourceTree = "<group>"; };
-		B88B25831DF612730045077C /* PeopleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeopleTableViewController.swift; path = ../PeopleTableViewController.swift; sourceTree = "<group>"; };
 		B88B25851DF612A70045077C /* PeopleEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleEditViewController.swift; sourceTree = "<group>"; };
 		B89F59711DA6DB44007324D7 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B89F59741DA6DB44007324D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +63,7 @@
 		B8DA22D91E0BF4E400F8AADE /* CommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
 		B8DA22DB1E0C15C100F8AADE /* ToDo 2.0 Image.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ToDo 2.0 Image.xcdatamodel"; sourceTree = "<group>"; };
 		B8DA23351E0C19ED00F8AADE /* ImageEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageEditViewController.swift; sourceTree = "<group>"; };
+		B8DA23671E0D89C100F8AADE /* PeopleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,10 +119,10 @@
 			isa = PBXGroup;
 			children = (
 				B8700C0B1DF8C8D3001027DB /* DataChangeDelegate.swift */,
-				B88B25831DF612730045077C /* PeopleTableViewController.swift */,
 				B88B25851DF612A70045077C /* PeopleEditViewController.swift */,
 				B8700C051DF88D08001027DB /* RelationSelectTableViewController.swift */,
 				B8700C071DF8BA70001027DB /* RelationItem.swift */,
+				B8DA23671E0D89C100F8AADE /* PeopleTableViewController.swift */,
 			);
 			name = NewAssignee;
 			sourceTree = "<group>";
@@ -296,6 +296,7 @@
 			files = (
 				B8700C041DF76949001027DB /* TaskEditViewController.swift in Sources */,
 				B8700C0C1DF8C8D3001027DB /* DataChangeDelegate.swift in Sources */,
+				B8DA23681E0D89C100F8AADE /* PeopleTableViewController.swift in Sources */,
 				B8700C1C1DFDAB34001027DB /* SelectionDoneCancelViewController.swift in Sources */,
 				B8DA23361E0C19ED00F8AADE /* ImageEditViewController.swift in Sources */,
 				B817109A1DFF7ECB008A6CF4 /* SummaryViewController.swift in Sources */,
@@ -308,7 +309,6 @@
 				B8700C061DF88D08001027DB /* RelationSelectTableViewController.swift in Sources */,
 				B817109E1DFFAB11008A6CF4 /* PeopleTaskDisplayTableViewController.swift in Sources */,
 				B8700C081DF8BA70001027DB /* RelationItem.swift in Sources */,
-				B88B25841DF612730045077C /* PeopleTableViewController.swift in Sources */,
 				B8700C201DFDC2B7001027DB /* StatusSelectionViewController.swift in Sources */,
 				B8700C171DFC2C89001027DB /* TaskListTableViewController.swift in Sources */,
 				B88B25861DF612A70045077C /* PeopleEditViewController.swift in Sources */,
