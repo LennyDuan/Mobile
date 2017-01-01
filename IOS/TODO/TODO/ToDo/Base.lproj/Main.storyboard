@@ -932,7 +932,7 @@
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="15"/>
                                 <state key="normal" title="Images Record &gt;&gt;"/>
                                 <connections>
-                                    <segue destination="VG7-yV-LMR" kind="show" id="PfH-c3-aKU"/>
+                                    <segue destination="VG7-yV-LMR" kind="presentation" id="PfH-c3-aKU"/>
                                 </connections>
                             </button>
                         </subviews>

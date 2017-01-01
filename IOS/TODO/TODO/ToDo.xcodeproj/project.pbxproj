@@ -41,6 +41,7 @@
 		B82772A41E186BDB0035E33A /* ToDo 2.0 Image 2.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ToDo 2.0 Image 2.1.xcdatamodel"; sourceTree = "<group>"; };
 		B82772C51E1872690035E33A /* ImageEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageEditViewController.swift; sourceTree = "<group>"; };
 		B82772C71E188D480035E33A /* ImageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewController.swift; sourceTree = "<group>"; };
+		B82772C91E190DE00035E33A /* ToDo 2.0 Image 2. 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ToDo 2.0 Image 2. 3.xcdatamodel"; sourceTree = "<group>"; };
 		B8700BF31DF760C9001027DB /* ToDo People 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ToDo People 2.xcdatamodel"; sourceTree = "<group>"; };
 		B8700BFA1DF768AD001027DB /* ToDo 1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ToDo 1.1.xcdatamodel"; sourceTree = "<group>"; };
 		B8700C031DF76949001027DB /* TaskEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskEditViewController.swift; sourceTree = "<group>"; };
@@ -491,6 +492,7 @@
 		B89F597B1DA6DB44007324D7 /* ToDo.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				B82772C91E190DE00035E33A /* ToDo 2.0 Image 2. 3.xcdatamodel */,
 				B82772A41E186BDB0035E33A /* ToDo 2.0 Image 2.1.xcdatamodel */,
 				B8DA22DB1E0C15C100F8AADE /* ToDo 2.0 Image.xcdatamodel */,
 				B8700C0D1DFA1468001027DB /* ToDo 1. 2.xcdatamodel */,
@@ -498,7 +500,7 @@
 				B8700BF31DF760C9001027DB /* ToDo People 2.xcdatamodel */,
 				B89F597C1DA6DB44007324D7 /* ToDo.xcdatamodel */,
 			);
-			currentVersion = B82772A41E186BDB0035E33A /* ToDo 2.0 Image 2.1.xcdatamodel */;
+			currentVersion = B82772C91E190DE00035E33A /* ToDo 2.0 Image 2. 3.xcdatamodel */;
 			path = ToDo.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
