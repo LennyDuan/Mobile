@@ -85,11 +85,26 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
+                  symbolName = "ToDo.PeopleEditViewController.__ivar_destroyer"
+                  moduleName = "ToDo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOS/TODO/TODO/ToDo/PeopleEditViewController.swift"
+                  timestampString = "504925315.045864"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
                   symbolName = "ToDo.PeopleEditViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; ToDo.PeopleEditViewController"
                   moduleName = "ToDo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOSAPP/IOS/TODO/TODO/ToDo/PeopleEditViewController.swift"
-                  timestampString = "503698046.52481"
+                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOS/TODO/TODO/ToDo/PeopleEditViewController.swift"
+                  timestampString = "504925315.048623"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -103,8 +118,8 @@
                   symbolName = "ToDo.PeopleEditViewController.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; ToDo.PeopleEditViewController"
                   moduleName = "ToDo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOSAPP/IOS/TODO/TODO/ToDo/PeopleEditViewController.swift"
-                  timestampString = "503698046.52726"
+                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOS/TODO/TODO/ToDo/PeopleEditViewController.swift"
+                  timestampString = "504925315.0514"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -118,8 +133,8 @@
                   symbolName = "ToDo.PeopleEditViewController.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;ToDo.PeopleEditViewController&gt;"
                   moduleName = "ToDo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOSAPP/IOS/TODO/TODO/ToDo/PeopleEditViewController.swift"
-                  timestampString = "503698046.529968"
+                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOS/TODO/TODO/ToDo/PeopleEditViewController.swift"
+                  timestampString = "504925315.053816"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -133,8 +148,8 @@
                   symbolName = "ToDo.PeopleEditViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;ToDo.PeopleEditViewController&gt;"
                   moduleName = "ToDo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOSAPP/IOS/TODO/TODO/ToDo/PeopleEditViewController.swift"
-                  timestampString = "503698046.532892"
+                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOS/TODO/TODO/ToDo/PeopleEditViewController.swift"
+                  timestampString = "504925315.056238"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -166,8 +181,8 @@
                   symbolName = "ToDo.PeopleEditViewController.nameEdit.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UITextField&gt;"
                   moduleName = "ToDo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOSAPP/IOS/TODO/TODO/ToDo/PeopleEditViewController.swift"
-                  timestampString = "503698046.542633"
+                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOS/TODO/TODO/ToDo/PeopleEditViewController.swift"
+                  timestampString = "504925315.063268"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -181,8 +196,8 @@
                   symbolName = "ToDo.PeopleEditViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; ToDo.PeopleEditViewController"
                   moduleName = "ToDo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOSAPP/IOS/TODO/TODO/ToDo/PeopleEditViewController.swift"
-                  timestampString = "503698046.548697"
+                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOS/TODO/TODO/ToDo/PeopleEditViewController.swift"
+                  timestampString = "504925315.067898"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -196,8 +211,8 @@
                   symbolName = "ToDo.PeopleEditViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;ToDo.PeopleEditViewController&gt;"
                   moduleName = "ToDo"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOSAPP/IOS/TODO/TODO/ToDo/PeopleEditViewController.swift"
-                  timestampString = "503698046.551934"
+                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOS/TODO/TODO/ToDo/PeopleEditViewController.swift"
+                  timestampString = "504925315.070459"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -362,6 +377,115 @@
             startingLineNumber = "167"
             endingLineNumber = "167"
             landmarkName = "updateSearchResults(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDo/ImageEditViewController.swift"
+            timestampString = "504919175.447364"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "ImageEditViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDo.ImageEditViewController.__deallocating_deinit"
+                  moduleName = "ToDo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOS/TODO/TODO/ToDo/ImageEditViewController.swift"
+                  timestampString = "504919178.147945"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDo.ImageEditViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; ToDo.ImageEditViewController"
+                  moduleName = "ToDo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOS/TODO/TODO/ToDo/ImageEditViewController.swift"
+                  timestampString = "504919178.149549"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "169">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDo.ImageEditViewController.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; ToDo.ImageEditViewController"
+                  moduleName = "ToDo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOS/TODO/TODO/ToDo/ImageEditViewController.swift"
+                  timestampString = "504919178.150881"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDo.ImageEditViewController.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;ToDo.ImageEditViewController&gt;"
+                  moduleName = "ToDo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOS/TODO/TODO/ToDo/ImageEditViewController.swift"
+                  timestampString = "504919178.152202"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDo.ImageEditViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;ToDo.ImageEditViewController&gt;"
+                  moduleName = "ToDo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Lenny/Documents/AppleApp/IOS/TODO/TODO/ToDo/ImageEditViewController.swift"
+                  timestampString = "504919178.153516"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "87">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDo/ImageEditViewController.swift"
+            timestampString = "504925675.288161"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "selectImageTap(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

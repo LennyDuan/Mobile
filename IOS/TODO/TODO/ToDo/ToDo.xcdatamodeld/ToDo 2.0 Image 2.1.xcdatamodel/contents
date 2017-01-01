@@ -2,7 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G1212" minimumToolsVersion="Xcode 7.3" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Image" representedClassName=".Image" syncable="YES" codeGenerationType="class">
         <attribute name="imageData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
-        <relationship name="task" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Task" inverseName="images" inverseEntity="Task" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="People" representedClassName=".People" syncable="YES" codeGenerationType="class">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
@@ -22,12 +22,11 @@
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tag" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="images" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="task" inverseEntity="Image" syncable="YES"/>
         <relationship name="people" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="People" inverseName="tasks" inverseEntity="People" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Image" positionX="225" positionY="87" width="128" height="73"/>
+        <element name="Image" positionX="252" positionY="-54" width="128" height="75"/>
         <element name="People" positionX="133" positionY="-144" width="128" height="150"/>
-        <element name="Task" positionX="376" positionY="-117" width="128" height="193"/>
+        <element name="Task" positionX="376" positionY="-117" width="128" height="180"/>
     </elements>
 </model>
